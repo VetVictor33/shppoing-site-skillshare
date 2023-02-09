@@ -6,22 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Stone</title>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
     <header class="header">
         <h1 class="header-title">Tech Store</h1>
-        <nav class="header-navbar">
-            <ul>
-                <li>home</li>
-                <li>shop</li>
-                <li>contact us</li>
-            </ul>
-        </nav>
-        <input id="header-search" type="text" placeholder="Search...">
+        <div class="left-itens-header">
+            <nav class="header-navbar">
+                <ul>
+                    <li>home</li>
+                    <li>shop</li>
+                    <li>contact us</li>
+                </ul>
+            </nav>
+            <input id="header-search" type="text" placeholder="Search...">
+        </div>
     </header>
     <main>
-        <aside class="menu">
+        <div class="menu">
             <h2 class="menu-title">Shop by:</h2>
             <h3 class="category-title">Catergory</h3>
             <div class="category-div">
@@ -34,14 +37,16 @@
                     <li>Other</li>
                 </ul>
             </div>
-            <h3 class="price-title"></h3>
+            <h3 class="price-title">Price ($)</h3>
             <div class="price-div">
-                <li>1-9</li>
-                <li>10-29</li>
-                <li>30-59</li>
-                <li>100+</li>
+                <ul>
+                    <li>1 - 9</li>
+                    <li>10 - 29</li>
+                    <li>30 - 59</li>
+                    <li>100+</li>
+                </ul>
             </div>
-        </aside>
+        </div>
         <div class="shopping-itens">
             <h2>All items:</h2>
             <div class="shopping-cards">
@@ -50,48 +55,60 @@
                     <span class="card-title">Game controller</span>
                     <span class="card-price">$79.95</span>
                     <span class="card-description">Awesome game controller for Xbox!</span>
-                    <button class="info-button">More Info</button>
-                    <button class="add-cart-button">Add to Cart</button>
+                    <div class="buttons-div">
+                        <button class="info-button">More Info</button>
+                        <button class="add-cart-button">Add to Cart</button>
+                    </div>
                 </div>
                 <div class="shopping-card">
                     <img src="./assets/headphones.jpg" alt="headphones">
                     <span class="card-title">White headphones</span>
                     <span class="card-price">$54.95</span>
                     <span class="card-description">Awesome white headphones!</span>
-                    <button class="info-button">More Info</button>
-                    <button class="add-cart-button">Add to Cart</button>
+                    <div class="buttons-div">
+                        <button class="info-button">More Info</button>
+                        <button class="add-cart-button">Add to Cart</button>
+                    </div>
                 </div>
                 <div class="shopping-card">
                     <img src="./assets/camera.jpg" alt="camera">
                     <span class="card-title">Canon camera</span>
                     <span class="card-price">$649.95</span>
                     <span class="card-description">Awesome camera by Canon!</span>
-                    <button class="info-button">More Info</button>
-                    <button class="add-cart-button">Add to Cart</button>
+                    <div class="buttons-div">
+                        <button class="info-button">More Info</button>
+                        <button class="add-cart-button">Add to Cart</button>
+                    </div>
                 </div>
                 <div class="shopping-card">
                     <img src="./assets/microphone.jpg" alt="microphone">
                     <span class="card-title"></span>
                     <span class="card-price"></span>
                     <span class="card-description"></span>
-                    <button class="info-button">More Info</button>
-                    <button class="add-cart-button">Add to Cart</button>
+                    <div class="buttons-div">
+                        <button class="info-button">More Info</button>
+                        <button class="add-cart-button">Add to Cart</button>
+                    </div>
                 </div>
                 <div class="shopping-card">
                     <img src="./assets/cables.jpg" alt="cables">
                     <span class="card-title"></span>
                     <span class="card-price"></span>
                     <span class="card-description"></span>
-                    <button class="info-button">More Info</button>
-                    <button class="add-cart-button">Add to Cart</button>
+                    <div class="buttons-div">
+                        <button class="info-button">More Info</button>
+                        <button class="add-cart-button">Add to Cart</button>
+                    </div>
                 </div>
                 <div class="shopping-card">
                     <img src="./assets/lenses.jpg" alt="lenses">
                     <span class="card-title"></span>
                     <span class="card-price"></span>
                     <span class="card-description"></span>
-                    <button class="info-button">More Info</button>
-                    <button class="add-cart-button">Add to Cart</button>
+                    <div class="buttons-div">
+                        <button class="info-button">More Info</button>
+                        <button class="add-cart-button">Add to Cart</button>
+                    </div>
                 </div>
             </div>
         </div>
