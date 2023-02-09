@@ -1,12 +1,13 @@
+const main = document.querySelector('main');
 const cards = document.querySelectorAll('.shopping-card');
 const buttons = document.querySelectorAll('.info-button');
-const addCartButton = document.querySelectorAll('.add-cart-button .main-list'); //só defini a classe main-list no primeiro button, terminar a lógica quando criar a page de cart
+const addCartButtons = document.querySelectorAll('.add-cart-button'); //só defini a classe main-list no primeiro button, terminar a lógica quando criar a page de cart
 
-for (let i = 0; i < cards.length; i++) {
-    buttons[i].addEventListener('click', (event) => {
+function showSelectedCard(card, button) {
+    button.addEventListener('click', (event) => {
         event.stopPropagation();
 
-        let child = cards[i].children;
+        let child = card.children;
 
         let imgSrc = child[0].src;
         let title = child[1].innerHTML;
@@ -24,9 +25,8 @@ for (let i = 0; i < cards.length; i++) {
         */
 
         const shoppingItens = document.querySelector('.shopping-itens');
-        shoppingItens.style.display = 'none'
+        //shoppingItens.style.display = 'none'
 
-        const main = document.querySelector('main');
         const section = document.createElement('section');
         const article = document.createElement('article');
         const img = document.createElement('img');
@@ -68,10 +68,37 @@ for (let i = 0; i < cards.length; i++) {
         buttonDiv.classList.add('buttons-div', 'selected-buttons-div');
         addCartButtonDetail.classList.add('selected-item-add-cart-button', 'add-cart-button')
         returnButtonDetail.classList.add('selected-item-return-button')
-    })
-    buttons[i].addEventListener('mouseover', (event) => {
-        event.stopPropagation();
-        buttons[i].style.cursor = 'pointer';
-        console.log('passou')
+
+        const selectedCard = document.querySelector('.selected-shopping-itens');
+
+        main.replaceChild(selectedCard, shoppingItens)
+
+        document.querySelector('.selected-item-return-button').addEventListener('click', () => {
+            main.replaceChild(shoppingItens, selectedCard)
+        });
     })
 }
+function pointerCursor(element, event) {
+    event.stopPropagation();
+    event.preventDefault();
+    element.style.cursor = 'pointer';
+}
+/*function showAllCards() {
+    const selectedCardSection = document.querySelector('.selected-shopping-itens');
+    selectedCardSection.remove
+}*/
+
+for (let i = 0; i < cards.length; i++) {
+    buttons[i].addEventListener('mouseover', (event) => {
+        pointerCursor(buttons[i], event)
+    })
+    showSelectedCard(cards[i], buttons[i]);
+}
+
+for (let i = 0; i < addCartButtons.length; i++) {
+    addCartButtons[i].addEventListener('mouseover', (event) => {
+        pointerCursor(addCartButtons[i], event)
+    })
+}
+
+console.log(addCartButtons)
