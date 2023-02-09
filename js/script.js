@@ -1,9 +1,31 @@
 const main = document.querySelector('main');
 const cards = document.querySelectorAll('.shopping-card');
-const buttons = document.querySelectorAll('.info-button');
+const infoButtons = document.querySelectorAll('.info-button');
 const addCartButtons = document.querySelectorAll('.add-cart-button'); //só defini a classe main-list no primeiro button, terminar a lógica quando criar a page de cart
 
+const category = document.querySelectorAll('.category-sec li');
+
+
+function pointerCursor(elements) {
+    if (elements.length) {
+        for (let element of elements) {
+            element.addEventListener('mouseover', (event) => {
+                event.stopPropagation();
+                event.preventDefault();
+                element.style.cursor = 'pointer';
+            })
+        }
+    } else {
+        elements.addEventListener('mouseover', (event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            elements.style.cursor = 'pointer';
+        })
+    }
+}
+
 function showSelectedCard(card, button) {
+    pointerCursor(infoButtons);
     button.addEventListener('click', (event) => {
         event.stopPropagation();
 
@@ -25,7 +47,6 @@ function showSelectedCard(card, button) {
         */
 
         const shoppingItens = document.querySelector('.shopping-itens');
-        //shoppingItens.style.display = 'none'
 
         const section = document.createElement('section');
         const article = document.createElement('article');
@@ -73,32 +94,44 @@ function showSelectedCard(card, button) {
 
         main.replaceChild(selectedCard, shoppingItens)
 
-        document.querySelector('.selected-item-return-button').addEventListener('click', () => {
+        const returnButton = document.querySelector('.selected-item-return-button');
+        returnButton.addEventListener('click', () => {
             main.replaceChild(shoppingItens, selectedCard)
         });
+        returnButton.addEventListener('mouseover', (event) => {
+            pointerCursor(returnButton, event)
+        })
+
     })
 }
-function pointerCursor(element, event) {
-    event.stopPropagation();
-    event.preventDefault();
-    element.style.cursor = 'pointer';
-}
-/*function showAllCards() {
-    const selectedCardSection = document.querySelector('.selected-shopping-itens');
-    selectedCardSection.remove
-}*/
 
+function filterCategory(elements) {
+    pointerCursor(elements);
+    for (let element of elements) {
+        element.addEventListener('click', (event) => {
+            let text = element.innerHTML.toUpperCase();
+            for (let card of cards) {
+                let cardTag = card.children[4].innerHTML.toUpperCase();
+                if (text != cardTag) {
+                    card.style.display = 'none';
+                } else if (text == cardTag) {
+                    card.style.display = 'flex'
+                }
+                if (text === 'ALL ITEMS') {
+                    for (card of cards) {
+                        card.style.display = 'flex';
+                    }
+                }
+            }
+        });
+    }
+}
+
+//showing details
 for (let i = 0; i < cards.length; i++) {
-    buttons[i].addEventListener('mouseover', (event) => {
-        pointerCursor(buttons[i], event)
-    })
-    showSelectedCard(cards[i], buttons[i]);
+    showSelectedCard(cards[i], infoButtons[i]);
 }
+//addding to cart
+pointerCursor(addCartButtons)
 
-for (let i = 0; i < addCartButtons.length; i++) {
-    addCartButtons[i].addEventListener('mouseover', (event) => {
-        pointerCursor(addCartButtons[i], event)
-    })
-}
-
-console.log(addCartButtons)
+filterCategory(category);
