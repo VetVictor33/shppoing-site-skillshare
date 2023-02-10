@@ -73,6 +73,12 @@ main {
     padding-top: 0;
 }
 
+.menu li {
+    text-align: left;
+    margin: 1em 0 0 4em;
+    width: fit-content;
+}
+
 .category-title,
 .price-title {
     font-size: 23px;
