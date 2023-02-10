@@ -13,13 +13,16 @@
 
 <body>
     <header class="header">
-        <h1 class="header-title">Tech Store</h1>
+        <h1 class="header-title"><a href="index.html">Tech Store</a></h1>
         <div class="left-itens-header">
             <nav class="header-navbar">
                 <ul>
-                    <li>home</li>
-                    <li>cart</li>
-                    <li>contact us</li>
+                    <li><a href="./index.html">home</a></li>
+                    <li class="cart"><a href="./pages/cart/index.html">cart<div class="cart-itens-counter">
+                                <p class="total-cart-itens">1</p>
+                            </div></a>
+                    </li>
+                    <li><a href="./pages/contact/index.html">contact us</a></li>
                 </ul>
             </nav>
             <input id="header-search" type="text" placeholder="Search...">
@@ -116,15 +119,117 @@
                         <button class="add-cart-button">Add to Cart</button>
                     </div>
                 </article>
+                <article class="shopping-card">
+                    <img src="./assets/controller.jpg" alt="controller">
+                    <span class="card-title">Game controller</span>
+                    <span class="card-price">$79.95</span>
+                    <span class="card-description">Awesome game controller for Xbox!</span>
+                    <span class="tags" style="display: none;">games acessories</span>
+                    <div class="buttons-div">
+                        <button class="info-button">More Info</button>
+                        <button class="add-cart-button main-list">Add to Cart</button>
+                    </div>
+                </article>
+                <article class="shopping-card">
+                    <img src="./assets/headphones.jpg" alt="headphones">
+                    <span class="card-title">White headphones</span>
+                    <span class="card-price">$54.95</span>
+                    <span class="card-description">Awesome white headphones!</span>
+                    <span class="tags" style="display: none;">acessories phones</span>
+                    <div class="buttons-div">
+                        <button class="info-button">More Info</button>
+                        <button class="add-cart-button">Add to Cart</button>
+                    </div>
+                </article>
+                <article class="shopping-card">
+                    <img src="./assets/camera.jpg" alt="camera">
+                    <span class="card-title">Canon camera</span>
+                    <span class="card-price">$649.95</span>
+                    <span class="card-description">Awesome camera by Canon!</span>
+                    <span class="tags" style="display: none;">cameras</span>
+                    <div class="buttons-div">
+                        <button class="info-button">More Info</button>
+                        <button class="add-cart-button">Add to Cart</button>
+                    </div>
+                </article>
+                <article class="shopping-card">
+                    <img src="./assets/microphone.jpg" alt="microphone">
+                    <span class="card-title">Yeti Microphone</span>
+                    <span class="card-price">$119.95</span>
+                    <span class="card-description">Awesome Blue Yeti microphone!</span>
+                    <span class="tags" style="display: none;">acessories</span>
+                    <div class="buttons-div">
+                        <button class="info-button">More Info</button>
+                        <button class="add-cart-button">Add to Cart</button>
+                    </div>
+                </article>
+                <article class="shopping-card">
+                    <img src="./assets/cables.jpg" alt="cables">
+                    <span class="card-title">Cabels</span>
+                    <span class="card-price">$10.95</span>
+                    <span class="card-description">Awesome cables available in different lengths!</span>
+                    <span class="tags" style="display: none;">acessories</span>
+                    <div class="buttons-div">
+                        <button class="info-button">More Info</button>
+                        <button class="add-cart-button">Add to Cart</button>
+                    </div>
+                </article>
+                <article class="shopping-card">
+                    <img src="./assets/lenses.jpg" alt="lenses">
+                    <span class="card-title">Camera lenses</span>
+                    <span class="card-price">$99.95</span>
+                    <span class="card-description">Awesome camera lenses (for Canon models &lt; 2022)!</span>
+                    <span class="tags" style="display: none;">cameras</span>
+                    <div class="buttons-div">
+                        <button class="info-button">More Info</button>
+                        <button class="add-cart-button">Add to Cart</button>
+                    </div>
+                </article>
+                <article class="shopping-card">
+                    <img src="./assets/controller.jpg" alt="controller">
+                    <span class="card-title">Game controller</span>
+                    <span class="card-price">$79.95</span>
+                    <span class="card-description">Awesome game controller for Xbox!</span>
+                    <span class="tags" style="display: none;">games acessories</span>
+                    <div class="buttons-div">
+                        <button class="info-button">More Info</button>
+                        <button class="add-cart-button main-list">Add to Cart</button>
+                    </div>
+                </article>
+                <article class="shopping-card">
+                    <img src="./assets/headphones.jpg" alt="headphones">
+                    <span class="card-title">White headphones</span>
+                    <span class="card-price">$54.95</span>
+                    <span class="card-description">Awesome white headphones!</span>
+                    <span class="tags" style="display: none;">acessories phones</span>
+                    <div class="buttons-div">
+                        <button class="info-button">More Info</button>
+                        <button class="add-cart-button">Add to Cart</button>
+                    </div>
+                </article>
+                <article class="shopping-card">
+                    <img src="./assets/camera.jpg" alt="camera">
+                    <span class="card-title">Canon camera</span>
+                    <span class="card-price">$649.95</span>
+                    <span class="card-description">Awesome camera by Canon!</span>
+                    <span class="tags" style="display: none;">cameras</span>
+                    <div class="buttons-div">
+                        <button class="info-button">More Info</button>
+                        <button class="add-cart-button">Add to Cart</button>
+                    </div>
+                </article>
+
             </section>
         </section>
     </main>
     <footer class="footer">
-        <ul>
-            <li>home</li>
-            <li>cart</li>
-            <li>contact us</li>
-        </ul>
+        <nav class="footer-navbar">
+            <ul>
+                <li><a href="./index.html">home</a></li>
+                <li><a href="./pages/cart/index.html">cart</a></li>
+                <li><a href="./pages/contact/index.html">contact us</a></li>
+            </ul>
+        </nav>
     </footer>
     <script type="text/javascript" src="./js/script.js"></script>
 </body>

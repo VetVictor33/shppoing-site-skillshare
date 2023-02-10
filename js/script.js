@@ -7,6 +7,34 @@ const category = document.querySelectorAll('.category-sec li');
 const prices = document.querySelectorAll('.price-sec li');
 const searchInput = document.querySelector('#header-search');
 
+let totalCartItens = localStorage.getItem('totalItens');
+const cartItensCounter = document.querySelector('.cart-itens-counter');
+
+function addCart() {
+    pointerCursor(addCartButtons);
+    for (let i = 0; i < addCartButtons.length; i++) {
+        addCartButtons[i].addEventListener('click', (event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            const priceFloat = parseFloat(cards[i].children[2].innerHTML.slice(1));
+            const title = cards[i].children[1].innerHTML;
+
+            totalCartItens++;
+            localStorage.setItem(totalCartItens + title, priceFloat);
+            localStorage.setItem('totalItens', totalCartItens);
+            printAmout();
+        })
+    }
+}
+
+function printAmout() {
+    if (totalCartItens < 1) {
+        cartItensCounter.style.display = 'none';
+    } else {
+        cartItensCounter.style.display = 'flex';
+        document.querySelector('.total-cart-itens').innerHTML = totalCartItens;
+    }
+}
 
 function pointerCursor(elements) {
     if (elements.length) {
@@ -193,11 +221,13 @@ function search(input) {
 }
 
 showSelectedCard(cards, infoButtons);
-//addding to cart
-pointerCursor(addCartButtons)
 
 filterCategory(category);
 
 filterPrice();
 
 search(searchInput);
+
+addCart();
+
+printAmout();
