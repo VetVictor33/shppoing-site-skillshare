@@ -1,58 +1,10 @@
 const main = document.querySelector('main');
 const cards = document.querySelectorAll('.shopping-card');
 const infoButtons = document.querySelectorAll('.info-button');
-//const addCartButtons = document.querySelectorAll('.add-cart-button'); //só defini a classe main-list no primeiro button, terminar a lógica quando criar a page de cart
 const shoppingItens = document.querySelector('.shopping-itens');
 const category = document.querySelectorAll('.category-sec li');
 const prices = document.querySelectorAll('.price-sec li');
 const searchInput = document.querySelector('#header-search');
-
-//let totalCartItens = localStorage.getItem('totalItens');
-//const cartItensCounter = document.querySelector('.cart-itens-counter');
-
-/*function addCart() {
-    pointerCursor(addCartButtons);
-    for (let i = 0; i < addCartButtons.length; i++) {
-        addCartButtons[i].addEventListener('click', (event) => {
-            event.stopPropagation();
-            event.preventDefault();
-            const priceFloat = parseFloat(cards[i].children[2].innerHTML.slice(1));
-            const title = cards[i].children[1].innerHTML;
-
-            totalCartItens++;
-            localStorage.setItem(totalCartItens + title, priceFloat);
-            localStorage.setItem('totalItens', totalCartItens);
-            printAmout();
-        })
-    }
-}*/
-
-/*function printAmout() {
-    if (totalCartItens < 1) {
-        cartItensCounter.style.display = 'none';
-    } else {
-        cartItensCounter.style.display = 'flex';
-        document.querySelector('.total-cart-itens').innerHTML = totalCartItens;
-    }
-}*/
-
-/*function pointerCursor(elements) {
-    if (elements.length) {
-        for (let element of elements) {
-            element.addEventListener('mouseover', (event) => {
-                event.stopPropagation();
-                event.preventDefault();
-                element.style.cursor = 'pointer';
-            })
-        }
-    } else {
-        elements.addEventListener('mouseover', (event) => {
-            event.stopPropagation();
-            event.preventDefault();
-            elements.style.cursor = 'pointer';
-        })
-    }
-}*/
 
 function showSelectedCard(cards, buttons) {
     pointerCursor(infoButtons);
@@ -67,16 +19,6 @@ function showSelectedCard(cards, buttons) {
             let title = child[1].innerHTML;
             let price = child[2].innerHTML;
             let description = child[3].innerHTML;
-
-            /* ----outra forma de fazer, porém trocando de page e usando o local storage
-            localStorage.setItem('img', imgSrc);
-            localStorage.setItem('title', title);
-            localStorage.setItem('price', price);
-            localStorage.setItem('description', description);
-    
-            console.log(i, imgSrc, title, price, description)
-            window.location.href = '../pages/products-details/item-details.html'
-            */
 
             const section = document.createElement('section');
             const article = document.createElement('article');
@@ -131,7 +73,7 @@ function showSelectedCard(cards, buttons) {
             });
 
             const botao = document.querySelector('.add-cart-button');
-            //---------------------AQUIIIIIIIII
+            //TODO : implement add button to selected item card
             pointerCursor(botao)
             botao.addEventListener('click', (event) => {
                 event.stopPropagation();
@@ -239,7 +181,3 @@ filterCategory(category);
 filterPrice();
 
 search(searchInput);
-/*
-addCart();
-
-printAmout();*/
