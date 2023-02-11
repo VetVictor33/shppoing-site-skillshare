@@ -1,16 +1,16 @@
 const main = document.querySelector('main');
 const cards = document.querySelectorAll('.shopping-card');
 const infoButtons = document.querySelectorAll('.info-button');
-const addCartButtons = document.querySelectorAll('.add-cart-button'); //só defini a classe main-list no primeiro button, terminar a lógica quando criar a page de cart
+//const addCartButtons = document.querySelectorAll('.add-cart-button'); //só defini a classe main-list no primeiro button, terminar a lógica quando criar a page de cart
 const shoppingItens = document.querySelector('.shopping-itens');
 const category = document.querySelectorAll('.category-sec li');
 const prices = document.querySelectorAll('.price-sec li');
 const searchInput = document.querySelector('#header-search');
 
-let totalCartItens = localStorage.getItem('totalItens');
-const cartItensCounter = document.querySelector('.cart-itens-counter');
+//let totalCartItens = localStorage.getItem('totalItens');
+//const cartItensCounter = document.querySelector('.cart-itens-counter');
 
-function addCart() {
+/*function addCart() {
     pointerCursor(addCartButtons);
     for (let i = 0; i < addCartButtons.length; i++) {
         addCartButtons[i].addEventListener('click', (event) => {
@@ -25,18 +25,18 @@ function addCart() {
             printAmout();
         })
     }
-}
+}*/
 
-function printAmout() {
+/*function printAmout() {
     if (totalCartItens < 1) {
         cartItensCounter.style.display = 'none';
     } else {
         cartItensCounter.style.display = 'flex';
         document.querySelector('.total-cart-itens').innerHTML = totalCartItens;
     }
-}
+}*/
 
-function pointerCursor(elements) {
+/*function pointerCursor(elements) {
     if (elements.length) {
         for (let element of elements) {
             element.addEventListener('mouseover', (event) => {
@@ -52,7 +52,7 @@ function pointerCursor(elements) {
             elements.style.cursor = 'pointer';
         })
     }
-}
+}*/
 
 function showSelectedCard(cards, buttons) {
     pointerCursor(infoButtons);
@@ -125,11 +125,23 @@ function showSelectedCard(cards, buttons) {
             main.replaceChild(selectedCard, shoppingItens)
 
             const returnButton = document.querySelector('.selected-item-return-button');
+            pointerCursor(returnButton);
             returnButton.addEventListener('click', () => {
                 main.replaceChild(shoppingItens, selectedCard)
             });
-            returnButton.addEventListener('mouseover', (event) => {
-                pointerCursor(returnButton, event)
+
+            const botao = document.querySelector('.add-cart-button');
+            //---------------------AQUIIIIIIIII
+            pointerCursor(botao)
+            botao.addEventListener('click', (event) => {
+                event.stopPropagation();
+                event.preventDefault();
+                const priceFloat = parseFloat(cards[i].children[2].innerHTML.slice(1));
+                const titlee = cards[i].children[1].innerHTML;
+
+                totalCartItens++;
+                localStorage.setItem(titlee, priceFloat);
+                printAmout();
             })
 
         })
@@ -227,7 +239,7 @@ filterCategory(category);
 filterPrice();
 
 search(searchInput);
-
+/*
 addCart();
 
-printAmout();
+printAmout();*/

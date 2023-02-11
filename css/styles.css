@@ -75,24 +75,3 @@
     background-color: rgb(48, 48, 247);
     color: white;
 }
-
-.cart a {
-    display: flex;
-    margin-left: 1em;
-}
-
-.cart-itens-counter {
-    margin-left: 0.5em;
-    width: 1em;
-    height: 1em;
-
-    border-bottom-left-radius: 100%;
-    border-top-left-radius: 100%;
-
-    background-color: red;
-    display: none;
-    align-items: center;
-    justify-content: center;
-
-    font-size: small;
-}
